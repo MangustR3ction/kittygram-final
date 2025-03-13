@@ -131,7 +131,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       
-      # Добавляем шаг для замены переменной в файле
       - name: Update docker-compose.production.yml
         run: |
           sed -i "s/\${DOCKER_USERNAME}/${{ secrets.DOCKER_USERNAME }}/g" docker-compose.production.yml
